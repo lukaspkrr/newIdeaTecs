@@ -1,0 +1,72 @@
+<div class="pt-page">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="left_form">
+        <figure><img src="assets/img/registration_bg.svg" alt=""></figure>
+        <h2>Tipo de atendimento</h2>
+      </div>
+    </div>
+    <div class="content col-md-8">
+      <div id="selecao-tipo-atendimento" class="col-xs-12 text-center">
+        <div class="row">
+          <div class="form-group col-sm-6">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="1"> Atendimento médico
+            </label>
+          </div>
+          <div class="form-group col-sm-6">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="2"> Atendimento de enfermagem
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-6">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="3"> Atendimento de dentista
+            </label>
+          </div>
+          <div class="form-group col-sm-6">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="4"> Setor de exames ou laboratórios
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-6">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="5"> Setor de fisioterapia
+            </label>
+          </div>
+          <div class="form-group col-sm-6">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="6"> Setor de farmácia
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label class="btn btn-lg btn-info">
+              <input type="radio" name="tipo-atendimento" value="7"> Atendimento durante a internação
+            </label>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-12">
+            <label for="profissional">Selecione o profissional que lhe atendeu:</label>
+            <select class="form-control" id="profissional">
+              <option value="">Sem profissional cadastrado ou instituição não selecionada.</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="btn-group pull-right">
+          <button type="button" name="backward" class="btn btn-danger prevPage" [routerLink]="['/instSaude']">Voltar</button>
+          <button type="button" class="btn btn-success nextPage" [routerLink]="['/questao', '01']">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

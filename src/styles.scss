@@ -1,0 +1,219 @@
+/* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html * {
+    -webkit-font-smoothing: antialiased
+}
+
+html, body, main {
+    height: 100%;
+}
+
+.d-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.align-items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.progress {
+    margin-bottom: 0px;
+}
+
+.left_form,
+h2.main_title {
+    text-align: center
+}
+
+html * {
+    -moz-osx-font-smoothing: grayscale
+}
+
+body {
+    min-height: 100%;
+    background: #ccebdd;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    color: #555
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+    color: #222;
+    font-weight: 700
+}
+
+p {
+    margin-bottom: 25px
+}
+
+hr {
+    margin: 15px 0 30px;
+    border-color: #ededed
+}
+
+a {
+    color: #409fff;
+    text-decoration: none;
+    transition: all .2s ease;
+    outline: 0
+}
+
+a:focus,
+a:hover {
+    color: #333;
+    text-decoration: none;
+    outline: 0
+}
+
+.niveis-satisfacao input[type="radio"] {
+    visibility: hidden;
+}
+
+#selecao-tipo-atendimento input[type="radio"] {
+    display: none;
+}
+
+.radio-checked {
+    border: 2px solid #7ab194;
+    border-radius: 15px;
+}
+
+.left_form,
+header {
+    position: relative
+}
+
+.content {
+    padding-top: 25px;
+    padding-right: 45px;
+    padding-bottom: 10px;
+}
+
+#form_container {
+    width: 1100px;
+    min-height: 520px;
+}
+
+.left_form {
+    background-color: #7ab194;
+    min-height: 460px;
+    height: 100%;
+    color: #fff;
+    padding: 70px 50px 30px;
+    box-sizing: border-box
+}
+
+.right_form{
+    background-color: #fff;
+    min-height: 460px;
+    height: 100%;
+    padding: 40px 50px 30px;
+    box-sizing: border-box
+}
+
+.left_form h2 {
+    font-weight: 300;
+    color: #fff;
+    margin: 15px 0;
+    padding: 0;
+    font-size: 36px
+}
+
+.left_form p {
+    font-size: 16px
+}
+
+h2.main_question {
+    margin: 0 0 20px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 36px
+}
+
+h3.main_question {
+    margin: 0 0 20px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+h3.main_question strong {
+    display: block;
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 400
+}
+
+.gallery .col-md-6 {
+    padding-bottom: 10px;
+}
+
+/*General links color*/
+a {
+	color: #81b342;
+}
+a:hover,
+a:focus {
+	color: #333;
+}
+
+.niveis-satisfacao {
+    background-image: url(assets/img/niveis-satisfacao.png);
+    background-repeat: no-repeat;
+    background-size: 487%;
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+}
+
+.muito-insatisfeito {
+    background-position: 25% 0px;
+}
+
+.insatisfeito {
+    background-position: 0% 0px;
+}
+
+.neutro {
+    background-position: 75% 0px;
+}
+
+.satisfeito {
+    background-position: 100% 0px;
+}
+
+.muito-satisfeito {
+    background-position: 50% 0px;
+}
+
+#selecao-tipo-atendimento label {
+    width: 100%;
+}
+
+.featherlight-next span, .featherlight-previous span {
+    color: #000;
+}
