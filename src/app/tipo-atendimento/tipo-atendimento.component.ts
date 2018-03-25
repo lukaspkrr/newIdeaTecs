@@ -20,8 +20,7 @@ export class TipoAtendimentoComponent implements OnInit {
 
   opcao(valorSelecionada) {
     this.seqSelecionada = this.sequencias[valorSelecionada];
-    console.log(this.seqSelecionada);
-  } 
+  }
 
   ngOnInit() {
     this.transitionController.animate(

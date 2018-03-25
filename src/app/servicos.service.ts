@@ -14,57 +14,47 @@ export class ServicosService {
     { idSeq: 6, seq: [6, 7] },
     { idSeq: 7, seq: [6, 7, 8, 9] }
   ];
+
   private questoes: any = [
     {
       idQst: 1,
-      qstNumero: "Questão 01",
-      qstPrincipal: "Em relação à HIGIENE E LIMPEZA desta unidade de saúde:",
-      qstPrimaria: "Qual era sua expectativa?",
-      qstSecundaria: "Qual a sua satisfação?"
+      qstNumero: 'Questão 01',
+      qstPrincipal: 'Em relação à HIGIENE E LIMPEZA desta unidade de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 2,
-      qstNumero: "Questão 02",
-      qstPrincipal: "Em relação à HIGIENE E LIMPEZA desta unidade de saúde:",
-      qstPrimaria: "Qual era sua expectativa?",
-      qstSecundaria: "Qual a sua satisfação?"
+      qstNumero: 'Questão 02',
+      qstPrincipal: '2',
+      qstPrimaria: '2',
+      qstSecundaria: '2'
     }, {
       idQst: 3,
-      qstNumero: "Questão 03",
-      qstPrincipal: "Em relação à HIGIENE E LIMPEZA desta unidade de saúde:",
-      qstPrimaria: "Qual era sua expectativa?",
-      qstSecundaria: "Qual a sua satisfação?"
+      qstNumero: 'Questão 03',
+      qstPrincipal: '3',
+      qstPrimaria: '3?',
+      qstSecundaria: '3'
     }
-  ]
+  ];
 
   sequenciasServicos() {
-    return this.sequencias
+    return this.sequencias;
   }
 
   listarSequenciaSelecionada() {
-    return this.seqSelecionada
+    return this.seqSelecionada;
   }
 
   selecionarSequencia(seq: any) {
-    this.seqSelecionada = seq
+    this.seqSelecionada = seq;
   }
 
   // serviço de perguntas
 
-  listarQuestoes(id: string) {
-    for (let i = 0; i < this.questoes.length; i++) {
-
-      console.log(id, this.questoes[i].idQst);
-
-      if (id == this.questoes[i].idQst) {
-        return this.questoes[i];
-      }
-    }
+  listarQuestoes() {
+    return this.questoes;
   }
-
-
-
-
 
   constructor() { }
 
