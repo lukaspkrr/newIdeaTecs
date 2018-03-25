@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 import { QuestaoComponent } from './questao/questao.component';
@@ -15,4 +15,4 @@ const APP_ROUTES: Routes = [
     { path: 'questao/:id', component: QuestaoComponent }
 ];
 
-export const routing : ModuleWithProviders =  RouterModule.forRoot(APP_ROUTES);
+export const routing: ModuleWithProviders =  RouterModule.forRoot(APP_ROUTES);

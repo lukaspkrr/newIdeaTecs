@@ -36,11 +36,20 @@
       </div>
     </div>
   </div>
-</div>
+
+  <label for="profissional">Selecione o profissional que lhe atendeu:</label>
+  <select class="form-control" id="profissional">
+    <option value="">Sem profissional cadastrado ou instituição não selecionada.</option>
+  </select>
+  
+  <div class="ui buttons">
+    <button class="ui button green" >Voltar</button>
+    <button class="ui button teal" [routerLink]="['/questao','1']">Continuar</button>
+  </div>
+
+  </div>
 
 
-<label for="profissional">Selecione o profissional que lhe atendeu:</label>
-<select class="form-control" id="profissional">
-  <option value="">Sem profissional cadastrado ou instituição não selecionada.</option>
-</select>
-</div>
+
+
+
