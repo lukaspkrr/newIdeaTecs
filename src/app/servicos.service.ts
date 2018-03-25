@@ -30,15 +30,15 @@ export class ServicosService {
     {
       idQst: 2,
       qstNumero: 'Questão 02',
-      qstPrincipal: '2',
-      qstPrimaria: '2',
-      qstSecundaria: '2'
+      qstPrincipal: 'Em relação à ESTRUTURA FÍSICA e instalações desta unidade de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
     }, {
       idQst: 3,
       qstNumero: 'Questão 03',
-      qstPrincipal: '3',
-      qstPrimaria: '3?',
-      qstSecundaria: '3'
+      qstPrincipal: 'Em relação ao TEMPO DE ESPERA PARA ATENDIMENTO nesta unidade de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
     }
   ];
 
