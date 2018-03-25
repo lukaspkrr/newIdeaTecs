@@ -20,7 +20,7 @@ export class QuestaoComponent implements OnInit{
   transitionName:string = "fly left";
 
   constructor(
-    private servicoService: ServicosService,
+    private servicosService: ServicosService,
     private activeRoute: ActivatedRoute,
     private router: Router
   ) { }
@@ -39,20 +39,23 @@ export class QuestaoComponent implements OnInit{
   proxPagina() {
     this.pagina++;
     this.router.navigate([`/questao/${this.pagina}`]);
-
     this.reload();
+    this.transitionController.animate(
+      new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
   }
 
 
  
   ngOnInit() {
-    this.servicePaginas = this.servicoService.listarQuestoes();
+    this.servicosService.setTitulo('Questão');
+    this.servicosService.setSubtitulo('');
+    this.servicePaginas = this.servicosService.listarQuestoes();
     
     setTimeout(() => {
       this.reload();
     }, 20);
 
-     this.qstPagina = this.servicoService.listarQuestoes();
+     this.qstPagina = this.servicosService.listarQuestoes();
      this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
 

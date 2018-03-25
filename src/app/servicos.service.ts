@@ -3,6 +3,10 @@ import { Injectable, EventEmitter } from '@angular/core';
 @Injectable()
 export class ServicosService {
 
+  emitirTitulosComponent = new EventEmitter<string>();
+  private tituloComponent: string = "";
+  private subtituloComponent: string = "";
+
   // serviço de sequencia de questões 6 a 10 
   private seqSelecionada: any;
   private sequencias: any = [
@@ -37,6 +41,23 @@ export class ServicosService {
       qstSecundaria: '3'
     }
   ];
+
+  getTitulo(){
+    return this.tituloComponent;
+  }
+
+  getSubtitulo(){
+    return this.subtituloComponent;
+}
+  setTitulo(titulo: string){
+    this.tituloComponent = titulo;
+    this.emitirTitulosComponent.emit(this.tituloComponent);
+  }
+
+  setSubtitulo(subtitulo: string){
+    this.subtituloComponent = subtitulo;
+    this.emitirTitulosComponent.emit(this.subtituloComponent);
+  }
 
   sequenciasServicos() {
     return this.sequencias;

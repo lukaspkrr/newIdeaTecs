@@ -1,5 +1,4 @@
 <div [suiTransition]="transitionController">
-<!-- <h2>Tipo de atendimento</h2> -->
 <div class="ui container">
 
   <div class="left_form">
@@ -43,7 +42,7 @@
   </select>
   
   <div class="ui buttons">
-    <button class="ui button green" >Voltar</button>
+    <button class="ui button green" [routerLink]="['/instSaude']">Voltar</button>
     <button class="ui button teal" [routerLink]="['/questao','1']">Continuar</button>
   </div>
 

@@ -23,6 +23,8 @@ export class TipoAtendimentoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.servicosService.setTitulo('Tipo de atendimento');
+    this.servicosService.setSubtitulo('');
     this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
   }
