@@ -1,4 +1,6 @@
+import { ServicosService } from './../servicos.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-questao',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestaoComponent implements OnInit {
 
-  constructor() { }
+  qstPagina: any;
 
+  constructor(
+    private servicoService: ServicosService,
+    private activeRoute: ActivatedRoute,
+  ) { }
+
+  // Função que envia o Id da pagina e posteriormente recebe os dados da pagina do ID enviado.
   ngOnInit() {
+     this.qstPagina = this.servicoService.listarQuestoes(this.activeRoute.snapshot.params['id']);
+     
   }
 
 }
