@@ -1,54 +1,45 @@
 <div [suiTransition]="transitionController">
-<div class="ui container">
 
-  <div class="left_form">
-    <figure>
-      <img src="assets/img/registration_bg.svg" alt="">
-    </figure>
-    <h2>Tipo de atendimento</h2>
+  <div class="ui stackable two column grid">
+    <div class="column">
+      <button class="fluid ui button teal" (click)="opcao('0')"> Atendimento médico</button>
+    </div>
+    <div class="column">
+      <button class="fluid ui button teal" (click)="opcao('1')"> Atendimento de enfermagem</button>
+    </div>
+    <div class="column">
+      <button class="fluid ui button teal" (click)="opcao('2')"> Atendimento de dentista</button>
+    </div>
+    <div class="column ">
+      <button class="fluid ui button teal" (click)="opcao('3')"> Setor de exames ou laboratórios</button>
+    </div>
+    <div class="column ">
+      <button class="fluid ui button teal" (click)="opcao('4')"> Setor de fisioterapia</button>
+    </div>
+    <div class="column ">
+      <button class="fluid ui button teal" (click)="opcao('5')"> Setor de farmácia</button>
+    </div>
   </div>
-  <br>
-
-  <div class="ui grid">
-    <div class="doubling four column row">
-
-      <div class="column">
-        <button class=" ui button teal" (click)="opcao('0')"> Atendimento médico</button>
-      </div>
-      <div class="column">
-        <button class=" ui button teal" (click)="opcao('1')"> Atendimento de enfermagem</button>
-      </div>
-      <div class="column">
-        <button class=" ui button teal" (click)="opcao('2')"> Atendimento de dentista</button>
-      </div>
-      <div class="column ">
-        <button class=" ui button teal" (click)="opcao('3')"> Setor de exames ou laboratórios</button>
-      </div>
-      <div class="column ">
-        <button class=" ui button teal" (click)="opcao('4')"> Setor de fisioterapia</button>
-      </div>
-      <div class="column ">
-        <button class=" ui button teal" (click)="opcao('5')"> Setor de farmácia</button>
-      </div>
-      <div class=" column">
-        <button class=" ui button teal" (click)="opcao('6')"> Atendimento durante a internação</button>
-      </div>
+  <div class="ui column grid">
+    <div class=" column">
+      <button class="fluid ui button teal" (click)="opcao('6')"> Atendimento durante a internação</button>
     </div>
   </div>
 
-  <label for="profissional">Selecione o profissional que lhe atendeu:</label>
-  <select class="form-control" id="profissional">
-    <option value="">Sem profissional cadastrado ou instituição não selecionada.</option>
-  </select>
-  
-  <div class="ui buttons">
-    <button class="ui button green" [routerLink]="['/instSaude']">Voltar</button>
-    <button class="ui button teal" [routerLink]="['/questao','1']">Continuar</button>
-  </div>
+  <div class="ui divider"></div>
 
-  </div>
-
-
-
-
-
+  <form class="ui form">
+    <div class="field">
+      <label>Selecione o profissional que lhe atendeu:</label>
+      <sui-select class="selection" [options]="options" labelField="profissional" [isSearchable]="searchable" [isDisabled]="disabled"
+        placeholder="Sem profissional cadastrado ou instituição não selecionada." #select>
+        <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+        </sui-select-option>
+      </sui-select>
+    </div>
+    <div class="ui buttons">
+      <button class="ui button green" [routerLink]="['/instSaude']">Voltar</button>
+      <button class="ui button teal" [routerLink]="['/questao','1']">Continuar</button>
+    </div>
+  </form>
+</div>
