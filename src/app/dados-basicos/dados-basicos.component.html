@@ -1,5 +1,4 @@
 <div [suiTransition]="transitionController">
-<!-- <h2>Dados básicos</h2> -->
 <form class="ui form">
   <div class="fields">
     <div class="ten wide field">
@@ -26,7 +25,13 @@
     </div>
     <div class="four wide field">
       <label>Ano de nascimento:</label>
-      <input type="text" name="nas" placeholder="">
+      <div class="ui left icon input">
+        <i class="calendar alternate icon"></i>
+        <input suiDatepicker
+               [pickerMode]="'date'"
+               [pickerFirstDayOfWeek]="firstDayOfWeek"
+               [pickerUseNativeOnMobile]="false">
+    </div>
     </div>
   </div>
   <div class="three fields">

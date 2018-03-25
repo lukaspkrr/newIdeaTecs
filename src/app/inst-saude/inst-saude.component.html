@@ -1,5 +1,4 @@
 <div [suiTransition]="transitionController">
-<!-- <h2>Instituição de saúde</h2> -->
 <form class="ui form">
     <div class="three fields">
         <div class="field">
@@ -29,7 +28,7 @@
       </div>
       <div class="two fields">
           <div class="field">
-            <label>Tipo da instituição::</label>
+            <label>Tipo da instituição:</label>
             <sui-select class="selection" [options]="options" labelField="uf" [isSearchable]="searchable"
               [isDisabled]="disabled" placeholder="Selecione o tipo de instituição" #select>
               <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
