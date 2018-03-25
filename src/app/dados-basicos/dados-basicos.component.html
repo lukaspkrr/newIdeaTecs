@@ -1,54 +1,54 @@
 <!-- <h2>Dados básicos</h2> -->
-<div class="content col-md-8">
-  <div class="col-xs-12">
-    <div class="row">
-      <div class="form-group col-sm-8">
-        <label for="nome" class="col-form-label">Nome:</label>
-        <input type="text" class="form-control" id="nome" placeholder="Informe o seu nome">
-      </div>
-      <div class="form-group col-sm-4">
-        <label for="cpf-rg" class="col-form-label">CPF/RG:</label>
-        <input type="text" class="form-control" id="cpf-rg" placeholder="Informe seu CPF ou RG" maxlength="11">
-      </div>
+<form class="ui form">
+  <div class="fields">
+    <div class="ten wide field">
+      <label>Nome:</label>
+      <input type="text" name="nome" placeholder="Informe o seu nome">
     </div>
-    <div class="row">
-      <div class="form-group col-sm-5">
-        <label for="email" class="col-form-label">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Informe seu email">
-      </div>
-      <div class="form-group col-sm-4">
-        <label for="grau-escolaridade" class="col-form-label">Grau de escolaridade:</label>
-        <select class="form-control" id="grau-escolaridade">
-          <option>Carregando...</option>
-        </select>
-      </div>
-      <div class="form-group col-sm-3">
-        <label for="ano-nascimento" class="col-form-label">Ano de nascimento:</label>
-        <input type="text" class="form-control" id="ano-nascimento">
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-sm-4">
-        <label for="tel-1" class="col-form-label">Telefone 1:</label>
-        <input type="text" class="form-control" id="tel-1" placeholder="(99) 99999-9999">
-      </div>
-      <div class="form-group col-sm-4">
-        <label for="tel-2" class="col-form-label">Telefone 2:</label>
-        <input type="text" class="form-control" id="tel-2" placeholder="(99) 99999-9999">
-      </div>
-      <div class="form-group col-sm-4">
-        <label for="sexo" class="col-form-label">Sexo:</label>
-        <select class="form-control" id="sexo">
-          <option>Carregando...</option>
-        </select>
-      </div>
+    <div class="six wide field">
+      <label>CPF/RG:</label>
+      <input type="text" name="cpfRg" placeholder="Informe o seu CPF ou RG">
     </div>
   </div>
-  <div class="col-xs-12">
-    <div class="btn-group pull-right">
-      <button type="button" name="backward" class="btn btn-danger prevPage" [routerLink]="['/']">Cancelar</button>
-      <button type="button" class="btn btn-warning nextPage" [routerLink]="['/instSaude']">Responder Anônimo</button>
-      <button type="button" class="btn btn-success nextPage" [routerLink]="['/instSaude']">Continuar</button>
+  <div class="fields">
+    <div class="seven wide field">
+      <label>Email:</label>
+      <input type="text" name="email" placeholder="Informe o seu email">
+    </div>
+    <div class="five wide field">
+      <label>Grau de escolaridade:</label>
+      <sui-select class="selection" [options]="options" labelField="grau" [isSearchable]="searchable"
+        [isDisabled]="disabled" placeholder="Não Informado" #select>
+        <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+        </sui-select-option>
+      </sui-select>
+    </div>
+    <div class="four wide field">
+      <label>Ano de nascimento:</label>
+      <input type="text" name="nas" placeholder="">
     </div>
   </div>
-</div>
+  <div class="three fields">
+    <div class="field">
+      <label>Telefone 1:</label>
+      <input type="text" name="tel1" placeholder="(99) 99999-9999">
+    </div>
+    <div class="field">
+      <label>Telefone 2:</label>
+      <input type="text" name="tel2" placeholder="(99) 99999-9999">
+    </div>
+    <div class="field">
+      <label>Sexo:</label>
+      <sui-select class="selection" [options]="options" labelField="sexo" [isSearchable]="searchable"
+        [isDisabled]="disabled" placeholder="Não Informado" #select>
+        <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+        </sui-select-option>
+      </sui-select>
+    </div>
+  </div>
+  <div class="ui buttons">
+      <button class="ui button green" [routerLink]="['/']">Cancelar</button>
+      <button class="ui button yellow" [routerLink]="['/instSaude']">Responder Anônimo</button>
+      <button class="ui button teal" [routerLink]="['/instSaude']">Continuar</button>
+    </div>
+</form>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { SuiModule } from 'ng2-semantic-ui';
 
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -22,7 +23,8 @@ import { routing } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    SuiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
