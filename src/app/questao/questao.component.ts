@@ -1,3 +1,4 @@
+import { TransitionController, Transition, TransitionDirection } from 'ng2-semantic-ui';
 import { ServicosService } from './../servicos.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,8 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class QuestaoComponent implements OnInit{
 
+
   servicePaginas: any;
   pagina: number = 1;
+
+  public transitionController = new TransitionController();
+  transitionName:string = "fly left";
+
   qstPagina: any;
 
 
@@ -43,10 +49,15 @@ export class QuestaoComponent implements OnInit{
 
  
   ngOnInit() {
+
     this.servicePaginas = this.servicoService.listarQuestoes();
-    
   this.reload();
-  
+
+
+     this.qstPagina = this.servicoService.listarQuestoes(this.activeRoute.snapshot.params['id']);
+     this.transitionController.animate(
+      new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
+
   }
 
 
