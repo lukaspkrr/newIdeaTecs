@@ -1,3 +1,4 @@
+import { TransitionController, Transition, TransitionDirection } from 'ng2-semantic-ui';
 import { ServicosService } from './../servicos.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tipo-atendimento.component.scss']
 })
 export class TipoAtendimentoComponent implements OnInit {
+  public transitionController = new TransitionController();
+  transitionName:string = "fly left"
 
   sequencias: any;
   seqSelecionada: any;
@@ -21,6 +24,8 @@ export class TipoAtendimentoComponent implements OnInit {
   } 
 
   ngOnInit() {
+    this.transitionController.animate(
+      new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
   }
 
   enviarSequencia() {
