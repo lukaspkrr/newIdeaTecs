@@ -28,7 +28,6 @@ export class QuestaoComponent implements OnInit{
   
   reload() {
     for (let i = 0; i < this.servicePaginas.length; i++) {
-      console.log(this.servicePaginas[i].idQst == this.pagina);
       
       if(this.servicePaginas[i].idQst == this.pagina){
         this.qstPagina = this.servicePaginas[i]
@@ -51,7 +50,7 @@ export class QuestaoComponent implements OnInit{
     
     setTimeout(() => {
       this.reload();
-    }, 100);
+    }, 20);
 
      this.qstPagina = this.servicoService.listarQuestoes();
      this.transitionController.animate(
