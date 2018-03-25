@@ -1,39 +1,52 @@
 <!-- <h2>Instituição de saúde</h2> -->
-<div class="content col-md-8">
-  <div class="col-xs-12">
-    <div class="row">
-      <div class="form-group col-sm-4">
-        <label for="uf" class="col-form-label">UF:</label>
-        <select class="form-control" id="uf">
-          <option>Carregando...</option>
-        </select>
+<!-- <h2>Dados básicos</h2> -->
+<form class="ui form">
+    <div class="three fields">
+        <div class="field">
+          <label>UF:</label>
+          <sui-select class="selection" [options]="options" labelField="uf" [isSearchable]="searchable"
+            [isDisabled]="disabled" placeholder="Selecione o estado" #select>
+            <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+            </sui-select-option>
+          </sui-select>
+        </div>
+        <div class="field">
+          <label>Município:</label>
+          <sui-select class="selection" [options]="options" labelField="municipio" [isSearchable]="searchable"
+            [isDisabled]="disabled" placeholder="Selecione o município" #select>
+            <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+            </sui-select-option>
+          </sui-select>
+        </div>
+        <div class="field">
+          <label>Bairro:</label>
+          <sui-select class="selection" [options]="options" labelField="bairro" [isSearchable]="searchable"
+            [isDisabled]="disabled" placeholder="Selecione o bairro" #select>
+            <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+            </sui-select-option>
+          </sui-select>
+        </div>
       </div>
-      <div class="form-group col-sm-4">
-        <label for="municipio" class="col-form-label">Município:</label>
-        <select class="form-control" id="municipio">
-          <option value="">Selecione</option>
-        </select>
+      <div class="two fields">
+          <div class="field">
+            <label>Tipo da instituição::</label>
+            <sui-select class="selection" [options]="options" labelField="uf" [isSearchable]="searchable"
+              [isDisabled]="disabled" placeholder="Selecione o tipo de instituição" #select>
+              <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+              </sui-select-option>
+            </sui-select>
+          </div>
+          <div class="field">
+            <label>Instituição de saúde:</label>
+            <sui-select class="selection" [options]="options" labelField="bairro" [isSearchable]="searchable"
+              [isDisabled]="disabled" placeholder="Selecione a instituição de saúde" #select>
+              <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+              </sui-select-option>
+            </sui-select>
+          </div>
+        </div>
+    <div class="ui buttons">
+        <button class="ui button green" [routerLink]="['/dadosBasicos']">Voltar</button>
+        <button class="ui button teal" [routerLink]="['/tipoAtendimento']">Continuar</button>
       </div>
-      <div class="form-group col-sm-4">
-        <label for="municipio" class="col-form-label">Tipo da instituição:</label>
-        <select class="form-control" id="tipo-instituicao">
-          <option value="">Selecione</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-sm-12">
-        <label for="instituicao" class="col-form-label">Instituição de saúde:</label>
-        <select class="form-control" id="instituicao">
-          <option value="">Selecione</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12">
-    <div class="btn-group pull-right">
-      <button type="button" name="backward" class="btn btn-danger prevPage" [routerLink]="['/dadosBasicos']">Voltar</button>
-      <button type="button" class="btn btn-success nextPage" [routerLink]="['/tipoAtendimento']">Continuar</button>
-    </div>
-  </div>
-</div>
+  </form>
