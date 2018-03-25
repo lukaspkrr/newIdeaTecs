@@ -54,14 +54,6 @@ export class ServicosService {
 
   listarQuestoes() {
     return this.questoes;
-
-    // for (let i = 0; i < this.questoes.length; i++) {
-
-
-    //   if (id == this.questoes[i].idQst) {
-    //     return this.questoes[i];
-    //   }
-    // }
   }
 
   constructor() { }

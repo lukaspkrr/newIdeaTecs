@@ -11,14 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class QuestaoComponent implements OnInit{
 
 
+  id: any;
   servicePaginas: any;
-  pagina: number = 1;
+  pagina: number = this.activeRoute.snapshot.params['id'];
+  qstPagina: any;
 
   public transitionController = new TransitionController();
   transitionName:string = "fly left";
-
-  qstPagina: any;
-
 
   constructor(
     private servicoService: ServicosService,
@@ -29,11 +28,9 @@ export class QuestaoComponent implements OnInit{
   
   reload() {
     for (let i = 0; i < this.servicePaginas.length; i++) {
-      console.log(this.servicePaginas[i].idQst == this.pagina);
       
       if(this.servicePaginas[i].idQst == this.pagina){
         this.qstPagina = this.servicePaginas[i]
-        console.log(this.qstPagina);
         break;
       }
     }
@@ -49,12 +46,13 @@ export class QuestaoComponent implements OnInit{
 
  
   ngOnInit() {
-
     this.servicePaginas = this.servicoService.listarQuestoes();
-  this.reload();
+    
+    setTimeout(() => {
+      this.reload();
+    }, 20);
 
-
-     this.qstPagina = this.servicoService.listarQuestoes(this.activeRoute.snapshot.params['id']);
+     this.qstPagina = this.servicoService.listarQuestoes();
      this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
 
