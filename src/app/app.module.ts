@@ -1,3 +1,4 @@
+import { ServicosService } from './servicos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -26,7 +27,7 @@ import { routing } from './app.routing';
     routing,
     SuiModule
   ],
-  providers: [],
+  providers: [ServicosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

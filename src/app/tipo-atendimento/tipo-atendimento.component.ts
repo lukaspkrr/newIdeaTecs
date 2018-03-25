@@ -1,3 +1,4 @@
+import { ServicosService } from './../servicos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipoAtendimentoComponent implements OnInit {
 
-  constructor() { }
+  sequencias: any;
+  seqSelecionada: any;
+
+  constructor(private servicosService: ServicosService) {
+    this.sequencias = servicosService.sequenciasServicos();
+  }
+
+  opcao(valorSelecionada) {
+    this.seqSelecionada = this.sequencias[valorSelecionada];
+    console.log(this.seqSelecionada);
+  } 
 
   ngOnInit() {
+  }
+
+  enviarSequencia() {
+    this.servicosService.selecionarSequencia(this.seqSelecionada);
   }
 
 }
