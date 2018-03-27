@@ -28,7 +28,6 @@ export class QuestaoComponent implements OnInit{
   
   reload() {
     for (let i = 0; i < this.servicePaginas.length; i++) {
-      
       if(this.servicePaginas[i].idQst == this.pagina){
         this.qstPagina = this.servicePaginas[i]
         break;
@@ -41,6 +40,8 @@ export class QuestaoComponent implements OnInit{
     this.router.navigate([`/questao/${this.pagina}`]);
 
     this.reload();
+    this.transitionController.animate(
+      new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
   }
 
 
@@ -57,9 +58,5 @@ export class QuestaoComponent implements OnInit{
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
 
   }
-
-
- 
-
 
 }

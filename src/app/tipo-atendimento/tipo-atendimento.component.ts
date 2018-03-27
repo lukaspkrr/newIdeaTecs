@@ -14,21 +14,21 @@ export class TipoAtendimentoComponent implements OnInit {
   sequencias: any;
   seqSelecionada: any;
 
-  constructor(private servicosService: ServicosService) {
-    this.sequencias = servicosService.sequenciasServicos();
-  }
+  constructor(private servicosService: ServicosService) { }
 
-  opcao(valorSelecionada) {
-    this.seqSelecionada = this.sequencias[valorSelecionada];
-  }
 
+    //Função para enviar a opção selecionada,envia para a função sequenciasService que esta no servicos.services.ts 
+    //a variavel valorSelecionado, que depois irar retornar para o sequencia para a variavel local seqSelecionada.
+  opcao(valorSelecionado) {
+    this.seqSelecionada = this.servicosService.sequenciasServicos()[valorSelecionado];
+  }
+    //Função para enviar o valor da sequencia selecionada para o service para ser acessado por outros componentes
+  enviarSequencia() {
+    this.servicosService.selecionarSequencia(this.seqSelecionada);
+  }
+  
   ngOnInit() {
     this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
   }
-
-  enviarSequencia() {
-    this.servicosService.selecionarSequencia(this.seqSelecionada);
-  }
-
 }
