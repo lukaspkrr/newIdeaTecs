@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './questao.component.html',
   styleUrls: ['./questao.component.scss']
 })
-export class QuestaoComponent implements OnInit{
+export class QuestaoComponent implements OnInit {
 
 
   id: any;
@@ -17,46 +17,63 @@ export class QuestaoComponent implements OnInit{
   qstPagina: any;
 
   public transitionController = new TransitionController();
-  transitionName:string = "fly left";
+  transitionName: string = "fly left";
 
   constructor(
-    private servicoService: ServicosService,
+    private servicosService: ServicosService,
     private activeRoute: ActivatedRoute,
     private router: Router
   ) { }
 
-  
+
   reload() {
     for (let i = 0; i < this.servicePaginas.length; i++) {
-      if(this.servicePaginas[i].idQst == this.pagina){
+
+
+      if (this.servicePaginas[i].idQst == this.pagina) {
+
         this.qstPagina = this.servicePaginas[i]
         break;
       }
     }
   }
-  
+
   proxPagina() {
     this.pagina++;
     this.router.navigate([`/questao/${this.pagina}`]);
-
     this.reload();
+
+    this.servicosService.setTitulo(this.qstPagina.qstNumero);
+
     this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
   }
 
+  paginaAnte(){
+    if(this.pagina > 1){
+    this.pagina--;
+    this.router.navigate([`/questao/${this.pagina}`]);
+    this.reload();
+    this.servicosService.setTitulo(this.qstPagina.qstNumero);
+    this.transitionController.animate(
+      new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
+    }else{
+      this.router.navigate(['/tipoAtendimento']);
+    }
+  }
 
- 
   ngOnInit() {
-    this.servicePaginas = this.servicoService.listarQuestoes();
-    
+    this.servicePaginas = this.servicosService.listarQuestoes();
     setTimeout(() => {
       this.reload();
     }, 20);
-
-     this.qstPagina = this.servicoService.listarQuestoes();
-     this.transitionController.animate(
+    this.qstPagina = this.servicosService.listarQuestoes();
+    this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
-
+    setTimeout(() => {
+      this.servicosService.setTitulo(this.qstPagina.qstNumero);
+      this.servicosService.setSubtitulo('');
+    }, 200);
   }
 
 }
