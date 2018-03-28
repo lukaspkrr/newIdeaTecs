@@ -20,16 +20,15 @@ export class TipoAtendimentoComponent implements OnInit {
     //a variavel valorSelecionado, que depois irar retornar para o sequencia para a variavel local seqSelecionada.
     opcao(valorSelecionado) {
     this.seqSelecionada = this.servicosService.sequenciasServicos()[valorSelecionado];
-
+    }
     //Função para enviar o valor da sequencia selecionada para o service para ser acessado por outros componentes
     enviarSequencia() {
       this.servicosService.selecionarSequencia(this.seqSelecionada);
-    }  
+    } 
       ngOnInit() {
     this.servicosService.setTitulo('Tipo de atendimento');
     this.servicosService.setSubtitulo('');
     this.transitionController.animate(
       new Transition(this.transitionName, 500, TransitionDirection.In, () => console.log("Completed transition.")));
-
   }
 }
