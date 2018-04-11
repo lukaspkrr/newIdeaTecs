@@ -1,9 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ServicosService {
 
   emitirTitulosComponent = new EventEmitter<string>();
+
+
   private tituloComponent: string = "";
   private subtituloComponent: string = "";
 
@@ -63,8 +67,52 @@ export class ServicosService {
       qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
+    },
+    {
+      idQst: 7,
+      qstNumero: 'Questão 07',
+      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
+    },
+    {
+      idQst: 8,
+      qstNumero: 'Questão 08',
+      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
+    },
+    {
+      idQst: 9,
+      qstNumero: 'Questão 09',
+      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
+    },
+    {
+      idQst: 10,
+      qstNumero: 'Questão 10',
+      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
+    },
+    {
+      idQst: 11,
+      qstNumero: 'Questão 11',
+      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
+    },
+    {
+      idQst: 12,
+      qstNumero: 'Questão 12',
+      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrimaria: 'Qual era sua expectativa?',
+      qstSecundaria: 'Qual a sua satisfação?'
     }
   ];
+
+      // serviço de Titulo
 
   getTitulo(){
     return this.tituloComponent;
@@ -83,24 +131,25 @@ export class ServicosService {
     this.emitirTitulosComponent.emit(this.subtituloComponent);
   }
 
+    // serviço de perguntas
+
   sequenciasServicos() {
     return this.sequencias;
   }
 
   listarSequenciaSelecionada() {
-    return this.seqSelecionada;
+   return this.seqSelecionada;
   }
 
   selecionarSequencia(seq: any) {
     this.seqSelecionada = seq;
   }
 
-  // serviço de perguntas
-
   listarQuestoes() {
     return this.questoes;
   }
 
-  constructor() { }
+  constructor() { 
+  }
 
 }
