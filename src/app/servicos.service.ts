@@ -12,18 +12,18 @@ export class ServicosService {
   private subtituloComponent: string = "";
 
   // serviço de sequencia de questões 6 a 10 
-  private seqSelecionada: any;
+  public seqSelecionada: any;
   private sequencias: any = [
-    { idSeq: 1, seq: [6, 7] },
-    { idSeq: 2, seq: [6, 7] },
-    { idSeq: 3, seq: [6, 7, 9] },
-    { idSeq: 4, seq: [6, 7, 9] },
-    { idSeq: 5, seq: [6, 7, 9] },
-    { idSeq: 6, seq: [6, 7] },
-    { idSeq: 7, seq: [6, 7, 8, 9] }
+    { idSeq: 1, seq: [6, 7] , opcional: 'MÉDICO(A)' },
+    { idSeq: 2, seq: [6, 7] , opcional: 'ENFERMEIRO(A)' },
+    { idSeq: 3, seq: [6, 7, 9] , opcional: 'DENTISTA' },
+    { idSeq: 4, seq: [6, 7, 9] , opcional: 'no SETOR DE EXAMES ou LABORATÓRIO' },
+    { idSeq: 5, seq: [6, 7, 9] , opcional: 'FISIOTERAPEUTA' },
+    { idSeq: 6, seq: [6, 7] , opcional: 'FARMÁCIA' },
+    { idSeq: 7, seq: [6, 7, 8, 9] , opcional: 'NUTRICIONISTA' }
   ];
 
-  private questoes: any = [
+  public questoes: any = [
     {
       idQst: 1,
       qstNumero: 'Questão 01',
@@ -64,49 +64,53 @@ export class ServicosService {
     {
       idQst: 6,
       qstNumero: 'Questão 06',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal1: 'Em relação à ATUAÇÃO do(a) ',
+      qstPrincipal2: ' para a RESOLUÇÃO do seu problema de saúde:',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 7,
       qstNumero: 'Questão 07',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal1: 'Qual sua satisfação com o ATENDIMENTO do(a) ',
+      qstPrincipal2: ' recebido nesta unidade de saúde?',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 8,
       qstNumero: 'Questão 08',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal1: 'Qual sua satisfação com o ATENDIMENTO ',
+      qstPrincipal2: ' desta unidade de saúde?',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 9,
       qstNumero: 'Questão 09',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal1: 'Em relação à ATUAÇÃO do(a) ',
+      qstPrincipal2: ' para a RESOLUÇÃO do seu problema de saúde:',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 10,
       qstNumero: 'Questão 10',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal: 'Em relação à CONFIANÇA NO ATENDIMENTO e à COMPETÊNCIA e CAPACITAÇÃO da equipe desta unidade:',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 11,
       qstNumero: 'Questão 11',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal: 'Em relação ao TEMPO NA FILA de AGENDAMENTO para MARCAR VAGA de atendimento nesta unidade de saúde:',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     },
     {
       idQst: 12,
       qstNumero: 'Questão 12',
-      qstPrincipal: 'Em relação à ATUAÇÃO do(a) <span id="label-profissionalQt06"></span> para a RESOLUÇÃO do seu problema de saúde:',
+      qstPrincipal: 'Em relação à sua SATISFAÇÃO GERAL com o ATENDIMENTO nesta unidade de saúde e à AVALIAÇÃO FINAL de seu atendimento:',
       qstPrimaria: 'Qual era sua expectativa?',
       qstSecundaria: 'Qual a sua satisfação?'
     }
