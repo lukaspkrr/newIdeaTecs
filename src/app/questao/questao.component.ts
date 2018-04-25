@@ -50,12 +50,15 @@ export class QuestaoComponent implements OnInit {
     }
   }
 
- // Função para avançar para a proxima página
+  // Função para avançar para a proxima página
   proxPagina() {
-    if (this.id >= 5 && this.id <= 9 && (this.sequencia.seq.length - 1) > this.cont) {
+    if (this.id >= 5 && this.id <= 9 && (this.sequencia.seq.length) > this.cont + 1) {
       this.cont++
       this.id = this.sequencia.seq[this.cont]
       this.router.navigate([`/questao/${this.sequencia.seq[this.cont]}`]);
+    } else if (this.id >= 5 && this.id <= 9 && (this.sequencia.seq.length) == this.cont + 1) {
+      this.id = 10
+      this.router.navigate([`/questao/10`]);
     } else {
       this.id++;
       this.router.navigate([`/questao/${this.id}`]);
@@ -65,6 +68,7 @@ export class QuestaoComponent implements OnInit {
 
   // Função para retroceder para a página anterior
   paginaAnte() {
+
     if (this.id > 1) {
       if (this.id > 6 && this.id <= 9) {
         this.cont--
@@ -73,6 +77,12 @@ export class QuestaoComponent implements OnInit {
       } else {
         this.id--;
         this.router.navigate([`/questao/${this.id}`]);
+        if (this.id >= this.sequencia.seq[0] && this.id <= this.sequencia.seq[this.sequencia.seq.length - 1]) {
+          this.cont = this.sequencia.seq.indexOf(this.id)
+        }
+        if (this.id == 5) {
+          this.cont = -1;
+        }
       }
       this.reload();
     } else {
@@ -85,7 +95,6 @@ export class QuestaoComponent implements OnInit {
     if (this.sequencia == undefined || this.sequencia == '') {
       this.router.navigate(['/tipoAtendimento']);
     }
-
     this.servicePaginas = this.servicosService.listarQuestoes();
     this.qstPagina = this.servicosService.listarQuestoes();
 
